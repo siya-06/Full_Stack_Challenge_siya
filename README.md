@@ -33,6 +33,8 @@ Input Validation
 Each entry is validated to match the format:
 X->Y
 
+X->Y
+
 Rules:
 
 Only uppercase letters are allowed
@@ -40,7 +42,7 @@ Invalid inputs like hello, 1->2, A-> are collected separately
 Self-loops like A->A are treated as invalid
 Duplicate Handling
 Duplicate edges are ignored after the first occurrence
-They are stored in duplicate_edges
+Stored in duplicate_edges
 Graph Construction
 Parent-child relationships are stored using maps
 If a node has multiple parents, only the first occurrence is used
