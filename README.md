@@ -5,19 +5,24 @@ This project is a full-stack implementation for processing hierarchical node rel
 
 It includes:
 
-A REST API that accepts node data and builds tree or cycle structures
-A simple frontend to interact with the API and display results
-Tech Stack
+A REST API that accepts node data and builds tree or cycle structures.
+
+A simple frontend to interact with the API and display results.
+Tech Stack:
+
 Backend: Node.js, Express
 Frontend: HTML, CSS, JavaScript
 Hosting: Render (backend), Vercel (frontend)
-Live Links
+
+Live Links:
 Backend API:
 https://full-stack-challenge-siya.onrender.com/bfhl
 Frontend:
 https://full-stack-challenge-siya.vercel.app
+
 API Endpoint
 POST /bfhl
+
 Request Body:
 {
   "data": ["A->B", "A->C", "B->D"]
@@ -52,6 +57,7 @@ tree is empty
 has_cycle is set to true
 Depth Calculation
 For valid trees, depth is the number of nodes in the longest root-to-leaf path
+
 Summary
 
 The API returns:
