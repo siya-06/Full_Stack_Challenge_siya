@@ -35,30 +35,49 @@ X->Y
 
 X->Y
 
-Rules:
+### Input Validation
 
-Only uppercase letters are allowed
-Invalid inputs like hello, 1->2, A-> are collected separately
-Self-loops like A->A are treated as invalid
-Duplicate Handling
-Duplicate edges are ignored after the first occurrence
-Stored in duplicate_edges
-Graph Construction
-Parent-child relationships are stored using maps
-If a node has multiple parents, only the first occurrence is used
-Component Processing
-The graph may contain multiple independent components
-Each component is processed separately
-Root Identification
-A root is a node that never appears as a child
-If no such node exists (cycle case), the lexicographically smallest node is chosen
-Cycle Detection
-DFS is used to detect cycles
-If a cycle is found:
-tree is empty
-has_cycle is set to true
-Depth Calculation
-For valid trees, depth is the number of nodes in the longest root-to-leaf path
+**Rules:**
+- Only uppercase letters are allowed  
+- Invalid inputs like `hello`, `1->2`, `A->` are collected separately  
+- Self-loops like `A->A` are treated as invalid  
+
+---
+
+### Duplicate Handling
+- Duplicate edges are ignored after the first occurrence  
+- Stored in `duplicate_edges`  
+
+---
+
+### Graph Construction
+- Parent-child relationships are stored using maps  
+- If a node has multiple parents, only the first occurrence is used  
+
+---
+
+### Component Processing
+- The graph may contain multiple independent components  
+- Each component is processed separately  
+
+---
+
+### Root Identification
+- A root is a node that never appears as a child  
+- If no such node exists (cycle case), the lexicographically smallest node is chosen  
+
+---
+
+### Cycle Detection
+- DFS is used to detect cycles  
+- If a cycle is found:
+  - `tree` is empty  
+  - `has_cycle` is set to `true`  
+
+---
+
+### Depth Calculation
+- For valid trees, depth is the number of nodes in the longest root-to-leaf path  
 
 Summary
 
