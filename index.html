@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: #f5f5f5;
+  }
+
+  h2, h3 {
+    color: #333;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+
+  pre {
+    background: #222;
+    color: #0f0;
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 6px;
+  }
+</style>
+  <title>Full stack challenge_siya</title>
+</head>
+<body>
+
+  <h2>Enter Node Data</h2>
+
+  <textarea id="input" rows="6" cols="50" placeholder="Enter like: A->B, A->C"></textarea>
+  <br><br>
+
+  <button onclick="submitData()">Submit</button>
+
+  <h3>Response:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    async function submitData() {
+      const raw = document.getElementById("input").value;
+      const data = raw.split(",").map(x => x.trim());
+
+      try {
+        const res = await fetch("http://localhost:3000/bfhl", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ data })
+        });
+
+        const json = await res.json();
+        document.getElementById("output").innerText = JSON.stringify(json, null, 2);
+
+      } catch (err) {
+        document.getElementById("output").innerText = "Error calling API";
+      }
+    }
+  </script>
+
+</body>
+</html>
